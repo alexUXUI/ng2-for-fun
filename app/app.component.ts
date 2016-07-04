@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
+import { GameComponent } from './games/game-list.component';
+
 
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
@@ -14,6 +16,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
          <a [routerLink]="['Home']">Home</a>
          <a [routerLink]="['Profile']">Profile</a>
          <a [routerLink]="['About']">About</a>
+         <a [routerLink]="['Games']">Games</a>
+
 
       </nav>
       <router-outlet></router-outlet>
@@ -39,10 +43,15 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     path: '/about',
     name: 'About',
     component: AboutComponent
+  },
+  {
+    path: '/games',
+    name: 'Games',
+    component: GameComponent
   }
 ])
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   Alex = "Alex";
 

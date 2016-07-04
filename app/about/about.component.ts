@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
 })
 
 export class AboutComponent {
+
+  ngOnInit() {
+    console.log(`initiated about`)
+  }
+
 
 }

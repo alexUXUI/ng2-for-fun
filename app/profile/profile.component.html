@@ -1,0 +1,12 @@
+<h1>Profile template</h1>
+<ul>
+  <li *ngFor="let game of games">
+    {{ game }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{i}}. {{item}}
+  </li>
+</ul>

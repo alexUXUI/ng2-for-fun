@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+// import { ROUTER_DIRECTIVES } from '@angular/router';
 import { GamesService } from './games.service';
-import { Contact } from './contact.model';
+import { Game } from './game.model';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouterLink } from '@angular/router-deprecated';
 
 @Component({
   selector: 'my-app',
@@ -10,12 +11,13 @@ import { Contact } from './contact.model';
 
     <ul>
       <li *ngFor="let game of games">
-        <a>{{game.name}}</a>
+        <a [routerLink]="['GameDetails', {id: game.id} ]">{{game.name}}</a>
       </li>
     </ul>
+
   `,
   directives: [ROUTER_DIRECTIVES],
-  providers: [GamesService]
+  providers: [GamesService, ROUTER_PROVIDERS]
 })
 
 export class GameComponent implements OnInit {

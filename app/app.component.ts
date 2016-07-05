@@ -3,22 +3,18 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { GameComponent } from './games/game-list.component';
-
-
+import { GameDetailComponent } from './games/game-details/game-details.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 @Component({
     selector: 'my-app',
     template: `
       <h1 (click)="sayHi()">My First Angular 2 App</h1>
-
       <nav>
          <a [routerLink]="['Home']">Home</a>
          <a [routerLink]="['Profile']">Profile</a>
          <a [routerLink]="['About']">About</a>
          <a [routerLink]="['Games']">Games</a>
-
-
       </nav>
       <router-outlet></router-outlet>
     `,
@@ -45,9 +41,14 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     component: AboutComponent
   },
   {
-    path: '/games',
+    path: '',
     name: 'Games',
     component: GameComponent
+  },
+  {
+    path: '/games/:id',
+    name: 'GameDetails',
+    component: GameDetailComponent
   }
 ])
 
@@ -61,10 +62,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log(`initiated app`)
-  }
-
-  changeColor() {
-
   }
 
 }

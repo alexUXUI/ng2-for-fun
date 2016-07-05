@@ -10,7 +10,7 @@ export class GamesService {
     return this.games;
   }
 
-  getGame(id) {
-    return this.games.find(games => games.id == id);
+  getGame(id: any) {
+    return this.games.find(games => games.id === id);
   }
 }
